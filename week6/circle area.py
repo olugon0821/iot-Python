@@ -11,8 +11,8 @@ class Circle :
 
 
     def toString(self):
-        return "넓이 : {:.4f}\n둘레 : {:.4f}".format(self.getArea(),self.getCircumference())
+        return "넓이 : {}\n둘레 : {}".format(self.getArea(),self.getcircum())
 
 
-myCircle = Circle(float(input("반지름을 입력하세요 : ")))
-print(myCircle.toString())
+Circle = Circle(float(input("반지름을 입력하세요 : ")))
+print(Circle.toString())
