@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QHBoxLayout,QPushButton,QApplication,QWidget,QVBoxLayout,QLineEdit,QLabel
+from PyQt5.QtCore import Qt
 
 class pracWidget(QWidget):
     def __init__(self):
@@ -11,6 +12,7 @@ class pracWidget(QWidget):
         vbox = QVBoxLayout() # main box 생성
         
         self.label1 = QLabel('안녕하세요', self)
+        self.label1.setAlignment(Qt.AlignCenter)
         self.label1.hide()
         label2 = QLabel('출력 : ', self)
         self.label3 = QLabel('', self)
@@ -26,15 +28,19 @@ class pracWidget(QWidget):
         hbox1.addWidget(self.b2)# 버튼 배치
         
         hbox2 = QHBoxLayout() # hbox2 생성
-        hbox2.addWidget(self.label1)
         hbox2.addWidget(self.qle1)
         hbox2.addWidget(label2)
         hbox2.addWidget(self.label3)
         
+        hbox3 = QHBoxLayout()
+        hbox3.addWidget(self.label1)
+        self.label1
         
         
+        vbox.addLayout(hbox3)
         vbox.addLayout(hbox2) # box를 수직으로 배치
         vbox.addLayout(hbox1)
+        
 
         self.setLayout(vbox)  
 
